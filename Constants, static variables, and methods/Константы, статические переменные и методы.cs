@@ -21,7 +21,7 @@ class SomeClass
     public SomeClass()
     {
         Console.WriteLine("Конструктор по умолчанию");
-        s = DateTime.Now.ToString();
+       // s = DateTime.Now.ToString();
        // a = 9;
     }
     static SomeClass()
