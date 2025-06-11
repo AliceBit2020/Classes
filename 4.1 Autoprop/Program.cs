@@ -92,6 +92,10 @@
             Console.WriteLine($"Name_get_set : {obj1.Name_g_s}");
 
 
+            
+            
+
+
         }
     }
 }

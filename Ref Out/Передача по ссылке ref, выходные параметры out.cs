@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 namespace CSharp.String
 {
     class MainClass
@@ -6,8 +7,11 @@ namespace CSharp.String
         static void Main()
         {
             double a = 10, b = 5, add, subtract, mult, div;
+
+           
+
             //Console.WriteLine("a = " + a + "\t b = " + b);
-            //NoSwap(a, b);
+            //NoSwap(a, b);///  за замовчуванням value type заходять у методи по копії
             //Console.WriteLine("a = " + a + "\t b = " + b);
             //Swap(ref a, ref b);
             //Console.WriteLine("a = " + a + "\t b = " + b + "\n\n");
@@ -18,6 +22,8 @@ namespace CSharp.String
             //Console.WriteLine("\n\nМассив A");
             //foreach (int n in A)
             //    Console.Write("{0,4}", n);
+
+
             //int[] B = new int[] { 4, 5, 6 };
             //Console.WriteLine("\n\nМассив B");
             //foreach (int n in B)
@@ -62,14 +68,43 @@ namespace CSharp.String
 
 
 
-            Calculate(a, b, out add, out subtract, out mult, out div);
-            Console.WriteLine("\na = " + a + "\t b = " + b + "\n\n");
-            Console.WriteLine("Сумма чисел " + add);
-            Console.WriteLine("Разность чисел " + subtract);
-            Console.WriteLine("Произведение чисел " + mult);
-            Console.WriteLine("Деление чисел " + div);
-        }
+            //Calculate(a, b, out add, out subtract, out mult, out div);
+            //Console.WriteLine("\na = " + a + "\t b = " + b + "\n\n");
+            //Console.WriteLine("Сумма чисел " + add);
+            //Console.WriteLine("Разность чисел " + subtract);
+            //Console.WriteLine("Произведение чисел " + mult);
+            //Console.WriteLine("Деление чисел " + div);
 
+            int[] arr = new int[] { 1, 2, 3 };
+
+
+            ArrPlusNumber(arr, 1);
+            ShowArr(arr);
+
+
+
+            ArrNull(ref arr);
+            ShowArr(arr);
+
+           
+
+        }
+        static void ShowArr(int[] arr)/// працюємо з елементами, зчитуємо об'єкт, передаємо посилання (адресу оригінала)
+        {
+            if (arr != null)//// if (arr is not null)
+            {
+                foreach (var item in arr)
+                {
+                    Console.Write(item.ToString() + "\t");
+                }
+            }
+        }
+        static void ArrNull(ref int[] ar) => ar = null;//// якщо хочемо пернаправити посилання
+        static void ArrPlusNumber( int[] ar, int n) //// працюємо з елементами, перезаписуємо значення елементів
+            {
+            for (int i = 0; i < ar.Length; i++)
+                ar[i] +=n;
+            }
         static void NoSwap(double n, double m)////  по копії 
         {
             double temp = n;

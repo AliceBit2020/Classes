@@ -39,14 +39,18 @@ namespace CSharp.Params
             int min;
             int a = 10, b = 20;
             // Вызываем метод с двумя значениями
-            //min = ob.minVal(a, b);
+
+            min = ob.minVal(a, b);
+
             //Console.WriteLine("Минимум равен " + min);
             //// Вызываем метод с тремя значениями
-            //min = ob.minVal(a, b, -1);
+            ///
+            min = ob.minVal(a, b, -1);
+
             //Console.WriteLine("Минимум равен " + min);
             //// Вызываем метод с пятью значениями
-            //min = ob.minVal(18, 23, 3, 14, 25);
-            //Console.WriteLine("Минимум равен " + min);
+            min = ob.minVal(18, 23, 3, 14, 25);
+            Console.WriteLine("Минимум равен " + min);
             // Вызываем метод с int-массивом.
 
 
